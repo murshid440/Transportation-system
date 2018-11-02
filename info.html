@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" manifest="developer.mannifest">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bus tracking system</title>
+
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+
+
+    <script>
+        function initStorage() {
+            function saveName() {
+                var name = document.getElementById("name");
+                localStorage.setItem("name", name.value);
+
+            }
+
+            function saveEmail() {
+                var email = document.getElementById("email");
+                localStorage.setItem("email", email.value)
+
+            }
+
+            saveName();
+            saveEmail();
+            window.location.reload();
+        }
+
+        function displayName() {
+            if (localStorage.getItem("name") != null)
+                document.write("Welcome, " + localStorage.getItem("name"));
+        }
+
+        function showText() {
+            if (localStorage.getItem("email") == null)
+                document.write("<p>please enter your email</p>");
+            else
+                document.write('<p><strong>Subscribed Email :</strong><br>  ' + localStorage.getItem("email") + "</p>")
+        }
+
+        function clearIt() {
+            localStorage.clear();
+            window.location.reload();
+        }
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <!--container start-->
+
+        <header>
+            <!-- header start-->
+            <h1>
+                <span class="blue-text">Bus Tracking</span> Services Pvt Ltd
+            </h1>
+            <h2>
+                We track any bus  <span class="white-text"> Anytime!!!!!!!</span>
+            </h2>
+        </header>
+        <!--header end-->
+
+        <nav id="menu">
+            <!--menu div-->
+            <ul>
+                <li class="menuitem"><a href="index.html">Home</a></li>
+                <li class="menuitem"><a href="about.html">About Us</a></li>
+                <li class="menuitem"><a href="browse.html">Find Buses</a></li>
+                <li class="menuitem"><a href="enroll.html">Start Journey</a></li>
+                <li class="menuitem"><a href="contact.html">Contact Us</a></li>
+            </ul>
+
+            <div id="displayname">
+                <script>displayName();</script>
+            </div>
+        </nav>
+
+        <aside>
+            <nav id="leftmenu">
+                <!--left menu start-->
+                <h3>Available Routes</h3>
+                <ul>
+                    <li><a href="browse.html">Trivandrum</a></li>
+                    <li><a href="browse.html">Kozhikode</a></li>
+                    <li><a href="browse.html">Banglore</a></li>
+                    <li><a href="browse.html">Mysore</a></li>
+                    <li><a href="browse.html">Mumbai</a></li>
+                    <li><a href="browse.html">Coorg</a></li>
+                </ul>
+                <div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <h3>Newsletter</h3>
+                    <div id="pee">
+                        <script>showText();</script>
+                    </div>
+                    <form id="news" onsubmit="initStorage()">
+                        <p>
+                            <label>Name:</label>
+                            <input name="name" type="text" id="name">
+                        </p>
+                        <p>
+                            <label>Email:</label>
+                            <input name="email" type="email" id="email">
+                        </p>
+                        <input type="submit" value="submit">
+                        <a href="#" onclick="clearIt()">Clear!</a>
+                    </form>
+                </div>
+            </nav>
+            <!--left menu end-->
+
+        </aside>
+
+        <section>
+            <!--content1-->
+            <h2>Info! </h2>
+            <p>
+                This page is cached Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a sagittis erat. Quisque venenatis ullamcorper
+                eleifend. Donec dapibus dolor quam, sit amet porttitor leo convallis at. Quisque a placerat massa. Donec
+                placerat, tellus sit amet fringilla placerat, lacus libero vehicula augue, ac molestie lorem magna placerat
+                nisl. Quisque lorem purus, molestie ut tellus id, condimentum consectetur lectus. Duis dui velit, eleifend
+                quis enim et, rhoncus vulputate nulla. Phasellus quis lorem ac magna sodales efficitur. Nam ac sollicitudin
+                metus, eu ornare tellus. Cras vitae urna ligula. Sed gravida sed dolor congue fermentum. Ut porttitor consequat
+                ante sed fringilla. Praesent blandit ultricies venenatis. Praesent eu nunc eget libero accumsan viverra.
+                Fusce sed odio consectetur, tempus urna eget, ullamcorper ipsum. Suspendisse vitae tincidunt sem. Maecenas
+                at volutpat neque, in sodales nunc. Sed malesuada blandit ligula tempor hendrerit. Suspendisse potenti. Aenean
+                ullamcorper ex nec quam ultricies, ut interdum sapien elementum. Quisque odio orci, ornare quis lectus non,
+                scelerisque mollis lorem. Integer at nunc ac orci hendrerit luctus. Duis dignissim neque in quam viverra,
+                nec rutrum leo tincidunt. Etiam sit amet libero sit amet nibh dapibus pulvinar. Fusce molestie bibendum tempor.
+                Donec nec urna id quam accumsan fermentum. Duis posuere blandit felis, et semper dui iaculis sed. Curabitur
+                ullamcorper lacinia ex, quis laoreet erat pellentesque ac. Cras accumsan, elit a fermentum gravida, sem metus
+                mollis tellus, vel rhoncus lacus ligula a justo. In gravida nulla non enim accumsan venenatis. Integer non
+                finibus enim. Nullam sollicitudin dignissim metus imperdiet consequat. Duis efficitur sit amet tortor nec
+                elementum. Donec fermentum a nunc quis gravida. Nunc sit amet tincidunt nibh. Aenean suscipit, purus non
+                vulputate posuere, dolor ligula efficitur turpis, vitae elementum lorem eros in dolor. Sed fringilla leo
+                a lorem ultrices, non tincidunt odio porta. Nam semper fermentum congue. Suspendisse sagittis, magna id placerat
+                ultricies, risus sem rhoncus leo, vitae imperdiet est elit id enim. Donec id pharetra augue. Sed rutrum mattis
+                dui, vel dapibus urna pellentesque non. Vivamus eleifend, arcu nec facilisis tempor, metus libero laoreet
+                massa, sed lacinia tortor ante sit amet diam. Duis maximus luctus molestie. Donec volutpat facilisis nibh,
+                id consectetur sem faucibus sit amet. Duis egestas nisi libero, fermentum blandit ipsum facilisis non. Proin
+                eu sem nisi. Proin laoreet euismod aliquet. Etiam turpis velit, lobortis ut auctor eget, malesuada quis arcu.
+                Vivamus ac mollis erat. Donec volutpat purus sit amet nibh tempor, at consectetur purus ornare. Etiam fringilla
+                at felis sit amet posuere. Vestibulum aliquam eget turpis non blandit. Sed non massa id ante eleifend sodales
+                ut vitae massa. Nullam molestie velit lectus, lacinia congue dolor malesuada eleifend. Praesent hendrerit,
+                tortor ac ultrices tincidunt, magna velit semper risus, sed vestibulum neque neque sed eros. Aenean nec nibh
+                rhoncus, accumsan purus vitae, interdum odio. Maecenas laoreet urna purus, eu porta elit malesuada et. Cras
+                eget finibus lectus. Pellentesque vulputate ullamcorper neque, ac bibendum nisi molestie sed. Curabitur convallis
+                pellentesque leo, at condimentum massa pretium id. Ut tempus sollicitudin hendrerit. Donec ultrices hendrerit
+                mollis. In iaculis varius mauris. Quisque efficitur nisi ut malesuada tincidunt.
+            </p>
+        </section>
+        <!--content1 end-->
+
+        <footer style="clear: both ">
+            may the father of understanding guide us <a href="info.html">info</a>
+        </footer>
+    </div>
+    <!--container end-->
+</body>
+
+</html>

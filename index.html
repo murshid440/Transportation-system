@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" manifest="developer.mannifest">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bus tracking system</title>
+
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+
+
+    <script>
+        function initStorage() {
+            function saveName() {
+                var name = document.getElementById("name");
+                localStorage.setItem("name", name.value);
+
+            }
+
+            function saveEmail() {
+                var email = document.getElementById("email");
+                localStorage.setItem("email", email.value)
+
+            }
+
+            saveName();
+            saveEmail();
+            window.location.reload();
+        }
+
+        function displayName() {
+            if (localStorage.getItem("name") != null)
+                document.write("Welcome, " + localStorage.getItem("name"));
+        }
+
+        function showText() {
+            if (localStorage.getItem("email") == null)
+                document.write("<p>please enter your email</p>");
+            else
+                document.write('<p><strong>Subscribed Email :</strong><br>  ' + localStorage.getItem("email") + "</p>")
+        }
+
+        function clearIt() {
+            localStorage.clear();
+            window.location.reload();
+        }
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <!--container start-->
+
+        <header>
+            <!-- header start-->
+            <h1>
+                <span class="blue-text">Bus Tracking</span> Services Pvt Ltd
+            </h1>
+            <h2>
+                We track any bus  <span class="white-text"> Anytime!!!!!!!</span>
+            </h2>
+        </header>
+        <!--header end-->
+
+        <nav id="menu">
+            <!--menu div-->
+            <ul>
+                <li class="menuitem"><a href="index.html">Home</a></li>
+                <li class="menuitem"><a href="about.html">About Us</a></li>
+                <li class="menuitem"><a href="browse.html">Top Rated Buses</a></li>
+                <li class="menuitem"><a href="enroll.html">Track Bus</a></li>
+                <li class="menuitem"><a href="contact.html">Contact Us</a></li>
+            </ul>
+            
+            <div id="displayname">
+                <script>displayName();</script>
+            </div>
+        </nav>
+
+        <aside>
+            <nav id="leftmenu">
+                <!--left menu start-->
+                <h3>Available Routes</h3>
+                <ul>
+                    <li><a href="browse.html">Trivandrum</a></li>
+                    <li><a href="browse.html">Kozhikode</a></li>
+                    <li><a href="browse.html">Banglore</a></li>
+                    <li><a href="browse.html">Mysore</a></li>
+                    <li><a href="browse.html">Mumbai</a></li>
+                    <li><a href="browse.html">Coorg</a></li>
+                </ul>
+                <div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <h3>Newsletter</h3>
+                    <div id="pee">
+                        <script>showText();</script>
+                    </div>
+                    <form id="news" onsubmit="initStorage()">
+                        <p>
+                            <label>Name:</label>
+                            <input name="name" type="text" id="name">
+                        </p>
+                        <p>
+                            <label>Email:</label>
+                            <input name="email" type="email" id="email">
+                        </p>
+                        <input type="submit" value="submit">
+                        <a href="#" onclick="clearIt()">Clear!</a>
+                    </form>
+                </div>
+            </nav>
+            <!--left menu end-->
+
+        </aside>
+ 
+        <section>
+            <!--content1-->
+            <h2>Welcome to Bus Track </h2>
+            <img class="float" src="bus.jpg" alt="altair">
+            <h3>Who are we ??</h3>
+            <p>Bus Track is a travel service which provides realtime information about buses travelling through the specified routes</p>
+            <h3>Special Features</h3>
+            <p>tracking accurate upto a few metres,realtime info,</p>
+        </section>
+        <!--content1 end-->
+
+        
+</body>
+
+</html>

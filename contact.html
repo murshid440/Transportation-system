@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" manifest="developer.mannifest">
+    
+    <head>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <meta http-equiv="X-UA-Compatible" content="ie=edge">
+                    <title>Bus tracking system</title>
+                    
+                    <link rel="stylesheet" href="css/style.css" type="text/css">
+                        
+                        
+                        <script>
+                            function initStorage() {
+                                function saveName() {
+                                    var name = document.getElementById("name");
+                                    localStorage.setItem("name", name.value);
+                                    
+                                }
+                                
+                                function saveEmail() {
+                                    var email = document.getElementById("email");
+                                    localStorage.setItem("email", email.value)
+                                    
+                                }
+                                
+                                saveName();
+                                saveEmail();
+                                window.location.reload();
+                            }
+                        
+                        function displayName() {
+                            if (localStorage.getItem("name") != null)
+                            document.write("Welcome, " + localStorage.getItem("name"));
+                        }
+                        
+                        function showText() {
+                            if (localStorage.getItem("email") == null)
+                            document.write("<p>please enter your email</p>");
+                            else
+                            document.write('<p><strong>Subscribed Email :</strong><br>  ' + localStorage.getItem("email") + "</p>")
+                        }
+                        
+                        function clearIt() {
+                            localStorage.clear();
+                            window.location.reload();
+                        }
+                        </script>
+    </head>
+    
+    <body>
+        <div id="container">
+            <!--container start-->
+            
+            <header>
+                <!-- header start-->
+                <h1>
+                    <span class="blue-text">Bus Tracking</span> Services Pvt Ltd
+                </h1>
+                <h2>
+                    We track any bus  <span class="white-text"> Anytime!!!!!!!</span>
+                </h2>
+            </header>
+            <!--header end-->
+            
+            <nav id="menu">
+                <!--menu div-->
+                <ul>
+                    <li class="menuitem"><a href="index.html">Home</a></li>
+                    <li class="menuitem"><a href="about.html">About Us</a></li>
+                    <li class="menuitem"><a href="browse.html">Top Rated Buses</a></li>
+                    <li class="menuitem"><a href="enroll.html">Track Bus</a></li>
+                    <li class="menuitem"><a href="contact.html">Contact Us</a></li>
+                </ul>
+                
+                <div id="displayname">
+                    <script>displayName();</script>
+                </div>
+            </nav>
+            
+            <aside>
+                <nav id="leftmenu">
+                    <!--left menu start-->
+                    <h3>Available Routes</h3>
+                    <ul>
+                        <li><a href="browse.html">Trivandrum</a></li>
+                        <li><a href="browse.html">Kozhikode</a></li>
+                        <li><a href="browse.html">Banglore</a></li>
+                        <li><a href="browse.html">Mysore</a></li>
+                        <li><a href="browse.html">Mumbai</a></li>
+                        <li><a href="browse.html">Coorg</a></li>
+                    </ul>
+                    <div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <h3>Newsletter</h3>
+                        <div id="pee">
+                            <script>showText();</script>
+                        </div>
+                        <form id="news" onsubmit="initStorage()">
+                            <p>
+                            <label>Name:</label>
+                            <input name="name" type="text" id="name">
+                                </p>
+                                <p>
+                                <label>Email:</label>
+                                <input name="email" type="email" id="email">
+                                    </p>
+                                    <input type="submit" value="submit">
+                                        <a href="#" onclick="clearIt()">Clear!</a>
+                                        </form>
+                    </div>
+                </nav>
+                <!--left menu end-->
+                
+            </aside>        <section>
+            <!--content1-->
+            <div id="contact">
+                <h3>Contact Us</h3>
+                <p>Please use this form to contact a member of our website team</p>
+                <form method="post" action="somescript.php">
+                    <fieldset>
+                        <legend>about yourself</legend>
+                        <p>
+                            <label for="name">Full Name:</label>
+                            <input type="text" name="name">
+                        </p>
+                        <p>
+                            <label for="email">Email Address: </label>
+                            <input type="email" name="email">
+                        </p>
+                        <p>
+                            <label for="phone">Phone Number: </label>
+                            <input type="tel" name="phone">
+                        </p>
+                        <p>
+                            <label for="call">Best Time To Call: </label>
+                            <input type="radio" name="time" value="morning" checked>Morning
+                            <input type="radio" name="time" value="noon">Noon
+                            <input type="radio" name="time" value="evening">Evening
+                        </p>
+                        <p>
+                            <label for="location">Location:</label>
+                            <input list="location">
+                            <datalist id="location">
+                                <option value="Kozhikode">
+                                    <option value="Trivandrum">
+                                        <option value="Ernakulum">
+                            </datalist>
+                        </p>
+                    </fieldset>
+                    <fieldset>
+                       
+                        <!--implementation of date-->
+                        <p>
+                            <label for="dateofassasination">Date of travel:</label>
+                            <input type="date" name="dateofassasination">
+                        </p>
+
+                        </p>
+                        <p>
+                            <input type="submit" value="Submit Inquiry">
+                        </p>
+                </form>
+                </fieldset>
+            </div>
+            <!--contact end-->
+        </section>
+        <!--content1 end-->
+       
+    </div>
+    <!--container end-->
+</body>
+
+</html>
